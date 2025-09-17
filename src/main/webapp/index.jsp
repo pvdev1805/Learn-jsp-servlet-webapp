@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Students</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
 	<h1>Student List</h1>
