@@ -68,6 +68,10 @@ th, td {
   margin-left: 4px;
 }
 
+.form {
+  max-width: 400px;
+}
+
 .form-group {
   margin-bottom: 8px;
 }
