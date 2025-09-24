@@ -25,6 +25,7 @@
 					<th>Last Name</th>
 					<th>Email</th>
 					<th>Class</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			
@@ -38,6 +39,10 @@
 					<td><%= student.getLastName() %></td>
 					<td><%= student.getEmail() %></td>
 					<td><%= student.getStudentClass() %></td>
+					<td>
+						<a href="<%= request.getContextPath() %>/students/edit?id=<%= student.getId() %>" class="btn btn-edit">Edit</a>
+						<a href="<%= request.getContextPath() %>/students/delete?id=<%= student.getId() %>" class="btn btn-delete">Delete</a>
+					</td>
 				</tr>
 				
 	<%

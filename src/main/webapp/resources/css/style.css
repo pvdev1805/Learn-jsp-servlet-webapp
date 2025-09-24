@@ -53,6 +53,22 @@ th, td {
   box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
 }
 
+.btn-edit {
+	background-image: linear-gradient(to right, #4caf50, #81c784);
+}
+
+.btn-edit:hover {
+  background-image: linear-gradient(to right, #81c784, #4caf50);
+}
+
+.btn-delete {
+	background-image: linear-gradient(to right, #e53935, #ef5350);
+}
+
+.btn-delete:hover {
+  background-image: linear-gradient(to right, #ef5350, #e53935);
+}
+
 .mb-2 {
   margin-bottom: 8px;
 }
