@@ -69,8 +69,81 @@ th, td {
   background-image: linear-gradient(to right, #ef5350, #e53935);
 }
 
+.btn-login {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(
+    to right,
+    #ff6b6b 0%,
+    #ee5253 51%,
+    #ff6b6b 100%
+  );
+  background-size: 200% auto;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-login:hover {
+  background-position: right center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-login:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-logout {
+  background-color: #e74c3c;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+  
+  user-select: none;
+  
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-logout:hover {
+  background-color: #c0392b;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-logout:active {
+	transform: scale(0.98);
+	box-shadow: none;
+}
+
 .mb-2 {
   margin-bottom: 8px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  row-gap: 4px;
 }
 
 .label {
@@ -90,4 +163,9 @@ th, td {
 
 .form-group {
   margin-bottom: 8px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
 }
