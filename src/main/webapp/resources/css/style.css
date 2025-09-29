@@ -165,6 +165,11 @@ th, td {
   margin-bottom: 8px;
 }
 
+.form-group label {
+  display: inline-block;
+  min-width: 120px;
+}
+
 .error-message {
   color: red;
   font-weight: bold;
