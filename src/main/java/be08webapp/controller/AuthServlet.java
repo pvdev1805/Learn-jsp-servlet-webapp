@@ -15,7 +15,11 @@ import jakarta.servlet.http.HttpSession;
 @WebServlet({"/login", "/logout"})
 public class AuthServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private AuthService authService;
+	private final String homePath = "/";
+    private final String loginPath = "/login";
+    private final String logoutPath = "/logout";
+	private AuthService authService;
+    
 
     public void init() {
         this.authService = new AuthService();
@@ -23,9 +27,6 @@ public class AuthServlet extends HttpServlet {
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	String path = request.getServletPath();
-    	
-    	String loginPath = "/login";
-    	String logoutPath = "/logout";
     	
     	if(logoutPath.equals(path)) {
     		handleLogout(request, response);
@@ -36,8 +37,6 @@ public class AuthServlet extends HttpServlet {
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	String path = request.getServletPath();
-    	
-    	String loginPath = "/login";
     	
     	if(loginPath.equals(path)) {
     		handleLogin(request, response);
@@ -61,7 +60,7 @@ public class AuthServlet extends HttpServlet {
     			session.setAttribute("username", username);
     			session.setMaxInactiveInterval(30 * 60); // Set Timeout after 30 minutes
     			
-    			response.sendRedirect(request.getContextPath() + "/");
+    			response.sendRedirect(request.getContextPath() + homePath);
     		} else {
     			request.setAttribute("errorMessage", "Username or password is invalid");
     			showLoginForm(request, response);
@@ -80,6 +79,6 @@ public class AuthServlet extends HttpServlet {
     		session.invalidate();
     	}
     	
-    	response.sendRedirect(request.getContextPath() + "/login");
+    	response.sendRedirect(request.getContextPath() + loginPath);
     }
 }
