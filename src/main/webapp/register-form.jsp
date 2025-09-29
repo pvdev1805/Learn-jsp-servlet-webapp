@@ -5,17 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Register</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
-	<h1>Student Login</h1>
-	
-	<c:if test="${successMessage != null}">
-        <p class="success-message">
-            <c:out value="${successMessage}" />
-        </p>
-    </c:if>
+	<h1>Student Register</h1>
 	
 	<c:if test="${errorMessage != null}">
         <p class="error-message">
@@ -23,26 +17,31 @@
         </p>
     </c:if>
 	
-	<form action="<c:url value='/login' />" method="POST" class="form">
+	<form action="<c:url value='/register' />" method="POST" class="form">
 		<fieldset>
 			<legend>
-				Login
+				Register
 			</legend>
 			
 			<div class="form-group">
 				<label for="username">Username</label>
-				<input type="text" id="username" name="username" />
+				<input type="text" id="username" name="username" required />
 			</div>
 			
 			<div class="form-group">
 				<label for="password">Password</label>
-				<input type="password" id="password" name="password" />
+				<input type="password" id="password" name="password" required/>
+			</div>
+			
+			<div class="form-group">
+				<label for="confirmPassword">Confirm Password</label>
+				<input type="password" id="confirmPassword" name="confirmPassword" required/>
 			</div>
 			
 			<button type="submit" class="btn">Submit</button>
 		</fieldset>
 	</form>
 	
-	<p>Haven't got an account? <a href="<c:url value='/register' />">Register</a></p>
+	<p>Already have an account? <a href="<c:url value='/login' />">Login</a></p>
 </body>
 </html>
