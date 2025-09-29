@@ -29,4 +29,17 @@ public class AuthService {
 		
 		return passwordMatches;
 	}
+	
+	public boolean registerUser(String username, String rawPassword) throws SQLException {
+		// Check whether username has already existed or not
+		if(userDAO.findByUsername(username) != null) {
+			return false;
+		}
+		
+		// Hashing password
+		String hashedPassword = hashPassword(rawPassword);
+		
+		// Save new user to database
+		return userDAO.saveUser(username, hashedPassword);
+	}
 }

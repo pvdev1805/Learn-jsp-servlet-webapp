@@ -27,4 +27,18 @@ public class UserDAO {
 		}
 		return null;
 	}
+	
+	public boolean saveUser(String username, String hashedPassword) throws SQLException {
+		String sqlQuery = "INSERT INTO users (username, password_hash) VALUES (?, ?);";
+		
+		try(Connection conn = DatabaseConnection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sqlQuery)){
+			pstmt.setString(1, username);
+			pstmt.setString(2, hashedPassword);
+			
+			int rowAffected = pstmt.executeUpdate();
+			
+			return rowAffected > 0;
+		}
+	}
 }
